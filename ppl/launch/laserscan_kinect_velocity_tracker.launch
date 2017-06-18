@@ -1,0 +1,7 @@
+<launch>  
+    <node name="laserscan_kinect_velocity_tracker" pkg="ppl" type="velocity_tracker.py" respawn="true" output="screen">
+        <remap from="people" to="laserscan_kinect_people" />
+        <remap from="visualization_marker" to="laserscan_kinect_visualization_marker" />
+        <remap from="people_tracker_measurements" to="laserscan_kinect_people_tracker_measurements" />
+    </node>
+</launch>

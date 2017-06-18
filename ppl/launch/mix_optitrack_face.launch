@@ -1,0 +1,9 @@
+<launch>
+
+    <include file="$(find ppl)/launch/face_all.launch" />
+    <node name="optitrack" pkg="ppl" type="optitrack.py" output="screen" />
+
+</launch>
+
+
+    

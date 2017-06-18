@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find ppl)/launch/face_detector.rgbd.launch"/>
+    <!--
+    <include file="$(find ppl)/launch/leg_detector.launch"/>
+    -->
+    <include file="$(find ppl)/launch/filtered_leg_detector.launch"/>
+</launch>

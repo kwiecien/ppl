@@ -1,0 +1,16 @@
+<launch> 
+ 
+    <!--
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera_link" output="screen"
+    	args="0 0 0.82 0.0 0.0 0.0 /base_link /camera_link 100" />
+
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" output="screen"
+    	args="0 0  0.40 0 0 0 /base_link /laser 100" />
+    -->
+    
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" output="screen"
+    	args="0 0 0.45 0.0 0.0 0.0 /base_link /laser 100" />
+
+    <node pkg="tf" type="static_transform_publisher" name="laser_to_camera_link" output="screen"
+    	args="0 -0.30 0.67 0 0 0 /laser /camera_link 100" />
+</launch>

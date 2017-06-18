@@ -1,0 +1,8 @@
+<launch>
+
+    <include file="$(find ppl)/launch/laserscan_kinect.launch" />
+	<include file="$(find ppl)/launch/laserscan_kinect_leg_detector.launch" />
+	<include file="$(find ppl)/launch/laserscan_kinect_velocity_tracker.launch" />
+    <include file="$(find ppl)/launch/laserscan_kinect_paths.launch" />
+
+</launch>

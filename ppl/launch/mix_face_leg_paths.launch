@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="ppl" type="face_paths.py" name="face_paths" output="screen"/>
+    <node pkg="ppl" type="leg_paths.py" name="leg_paths" output="screen"/>
+</launch>

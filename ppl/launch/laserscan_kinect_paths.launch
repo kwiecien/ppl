@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="ppl" type="laserscan_kinect_paths.py" name="laserscan_kinect_paths" output="screen"/>
+</launch>

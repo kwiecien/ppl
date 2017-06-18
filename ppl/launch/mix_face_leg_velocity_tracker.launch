@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find ppl)/launch/leg_velocity_tracker.launch"/>
+    <include file="$(find ppl)/launch/face_velocity_tracker.launch"/>
+</launch>

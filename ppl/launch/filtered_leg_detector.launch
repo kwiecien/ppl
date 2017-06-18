@@ -1,0 +1,14 @@
+<launch>
+
+	<include file="$(find map_laser)/lfilter.launch"/>
+
+	<!--
+	<include file="$(find ppl)/launch/hokyuo_node.launch" />
+	-->
+	<node pkg="leg_detector" type="leg_detector" name="leg_detector" 
+		  args="scan:=scan_filtered $(find leg_detector)/config/trained_leg_detector.yaml
+		        people_tracker_measurements:=leg_people_tracker_measurements">
+		  <param name="fixed_frame" value="laser" />
+	</node>
+
+</launch>

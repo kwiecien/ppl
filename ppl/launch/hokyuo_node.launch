@@ -1,0 +1,10 @@
+<launch> 
+    <node name="hokuyo_node" pkg="hokuyo_node" type="hokuyo_node">
+        <remap from="scan" to="base_scan" />  
+        <param name="frame_id" value="laser" />
+        <param name="min_ang" value="-1.57079632679" /> 
+        <param name="max_ang" value="1.57079632679" />  
+        <param name="intensity" value="false" /> 
+        <param name="calibrate_time" value="true" />  
+    </node>  
+</launch> 

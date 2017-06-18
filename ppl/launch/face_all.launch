@@ -1,0 +1,7 @@
+<launch>
+
+	<include file="$(find ppl)/launch/face_detector.rgbd.launch" />
+	<include file="$(find ppl)/launch/face_velocity_tracker.launch" />
+	<node pkg="ppl" type="face_paths.py" name="face_paths" output="screen"/>
+
+</launch>

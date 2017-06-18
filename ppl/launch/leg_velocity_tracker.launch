@@ -1,0 +1,10 @@
+<launch>
+    <arg name="limit" default="0.2" /> 
+    <param name="/leg_detector/leg_reliability_limit" value="$(arg limit)" type="double"/>
+    
+    <node name="leg_velocity_tracker" pkg="ppl" type="velocity_tracker.py" respawn="true" output="screen">
+        <remap from="people" to="leg_people" />
+        <remap from="visualization_marker" to="leg_visualization_marker" />
+        <remap from="people_tracker_measurements" to="leg_people_tracker_measurements" />
+    </node>
+</launch>

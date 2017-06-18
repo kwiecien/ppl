@@ -1,0 +1,30 @@
+<launch>
+    
+    <node name="laserscan_kinect" pkg="laserscan_kinect" type="laserscan_kinect" output="screen"> 
+	  	<remap from="image" to="/camera/depth/image_raw"/>
+	  	<remap from="camera_info" to="/camera/depth/camera_info"/>
+        <remap from="scan" to="base_scan"/>
+      <rosparam command="load" file="$(find laserscan_kinect)/config/params.yaml" />
+	</node>
+
+    <node pkg="leg_detector" type="leg_detector" name="leg_detector" output="screen"
+		  args="scan:=base_scan $(find leg_detector)/config/trained_leg_detector.yaml">
+		  <param name="fixed_frame" value="laser" />
+	</node>
+
+    <arg name="camera" default="camera" />
+    <arg name="rgb_ns" default="rgb" />  
+    <arg name="depth_ns" default="depth_registered" />
+    <arg name="image_topic" default="image_raw" />
+    <arg name="depth_topic" default="image_raw" />
+    <arg name="fixed_frame" default="camera_depth_frame" />
+    <include file="$(find ppl)/launch/openni.launch" />
+
+    <node name="$(anon dynparam)" pkg="dynamic_reconfigure" type="dynparam" output="screen"
+            args="set_from_parameters $(arg camera)/driver">
+        <param name="depth_registration" type="bool" value="false" />
+    </node>    
+
+</launch>
+
+

@@ -1,0 +1,7 @@
+<launch>
+
+	<include file="$(find ppl)/launch/filtered_leg_detector.launch" />
+	<include file="$(find ppl)/launch/leg_velocity_tracker.launch" />
+	<node pkg="ppl" type="leg_paths.py" name="leg_paths" output="screen"/>
+
+</launch>

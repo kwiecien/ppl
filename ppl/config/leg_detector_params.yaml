@@ -1,0 +1,6 @@
+# Fixed frame
+fixed_frame: laser
+# Connection threshold [m]
+connection_threshold: 0.06
+# Min points per group
+min_points_per_group: 5

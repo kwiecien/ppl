@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find ppl)/launch/laserscan_mix.launch"/>
+    <include file="$(find ppl)/launch/leg_detector.launch"/>
+</launch>

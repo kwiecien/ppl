@@ -1,0 +1,10 @@
+<launch>
+
+	<include file="$(find ppl)/launch/leg_all.launch" />
+	<include file="$(find ppl)/launch/laserscan_kinect_all.launch" />
+	<node name="optitrack" pkg="ppl" type="optitrack.py" output="screen" />
+
+</launch>
+
+
+    

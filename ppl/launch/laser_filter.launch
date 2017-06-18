@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" respawn="true"
+        name="laserscan_kinect_filter">
+        <rosparam command="load" file="$(find map_laser)/filters.yaml" />
+        <remap from="scan" to="laserscan_kinect_base_scan" />
+        <remap from="scan_filtered" to="laserscan_kinect_scan_filtered" />
+    </node>
+</launch>

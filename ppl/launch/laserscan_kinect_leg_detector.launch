@@ -1,0 +1,15 @@
+<launch>
+	
+    <include file="$(find ppl)/launch/laser_filter.launch"/>
+
+    <node pkg="leg_detector" type="leg_detector" name="laserscan_kinect_leg_detector" output="screen"
+		  args="scan:=laserscan_kinect_scan_filtered $(find leg_detector)/config/trained_leg_detector.yaml">
+		  <rosparam command="load" file="$(find ppl)/config/laserscan_kinect_leg_detector_params.yaml" />
+          <remap from="people_tracker_measurements" to="laserscan_kinect_people_tracker_measurements"/>
+          <remap from="leg_tracker_measurements" to="laserscan_kinect_leg_tracker_measurements" />
+          <remap from="visualization_marker" to="laserscan_kinect_visualization_marker" />
+	</node>
+
+</launch>
+
+
